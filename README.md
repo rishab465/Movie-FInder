@@ -390,4 +390,4 @@ This project demonstrates:
 
 ---
 
-**Enjoy discovering music! 🎵**
+**Enjoy discovering movies! 🎵**
