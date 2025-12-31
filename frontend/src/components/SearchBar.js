@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+// Allow API base URL to be configured for different environments
+// If no env var is set and we are not on localhost, fall back to the deployed Railway URL
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+  || (typeof window !== 'undefined' && window.location.hostname !== 'localhost'
+    ? 'https://movie-finder-production.up.railway.app'
+    : 'http://localhost:5000');
+
 function SearchBar({ setAlbums, setLoading, setError }) {
   // State to store search input value
   const [searchTerm, setSearchTerm] = useState('');
@@ -22,7 +29,7 @@ function SearchBar({ setAlbums, setLoading, setError }) {
 
     try {
       // Call backend API to search albums
-      const response = await axios.get(`http://localhost:5000/api/spotify/search`, {
+      const response = await axios.get(`${API_BASE_URL}/api/spotify/search`, {
         params: {
           query: searchTerm
         }
