@@ -57,18 +57,18 @@ function SearchBar({ setAlbums, setLoading, setError }) {
   };
 
   return (
-    <div className="mb-12 animate-fadeIn">
-      <form onSubmit={handleSearch} className="flex gap-4 max-w-3xl mx-auto">
+    <div className="mb-8 sm:mb-12 animate-fadeIn">
+      <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-3xl mx-auto px-4 sm:px-0">
         <input
           type="text"
-          className="flex-1 px-8 py-5 text-lg border-none rounded-full bg-white/95 shadow-lg transition-all duration-300 border-2 border-transparent focus:outline-none focus:bg-white focus:shadow-2xl focus:-translate-y-1 focus:border-white/50 placeholder:text-gray-400 placeholder:font-light"
+          className="flex-1 px-4 sm:px-8 py-3 sm:py-5 text-base sm:text-lg border-none rounded-full bg-white/95 shadow-lg transition-all duration-300 border-2 border-transparent focus:outline-none focus:bg-white focus:shadow-2xl focus:-translate-y-1 focus:border-white/50 placeholder:text-gray-400 placeholder:font-light"
           placeholder="Search for movies (e.g., Avengers, Inception, Titanic)..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button 
           type="submit" 
-          className="px-12 py-5 text-lg font-bold text-white bg-gradient-to-r from-spotify-green to-spotify-green-light border-none rounded-full cursor-pointer transition-all duration-300 shadow-lg shadow-spotify-green/40 uppercase tracking-wider hover:from-spotify-green-light hover:to-spotify-green hover:-translate-y-1 hover:scale-105 hover:shadow-xl hover:shadow-spotify-green/60 active:translate-y-0 active:scale-100"
+          className="px-8 sm:px-12 py-3 sm:py-5 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-spotify-green to-spotify-green-light border-none rounded-full cursor-pointer transition-all duration-300 shadow-lg shadow-spotify-green/40 uppercase tracking-wider hover:from-spotify-green-light hover:to-spotify-green hover:-translate-y-1 hover:scale-105 hover:shadow-xl hover:shadow-spotify-green/60 active:translate-y-0 active:scale-100"
         >
           Search
         </button>

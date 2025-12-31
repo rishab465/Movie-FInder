@@ -31,24 +31,24 @@ function AlbumCard({ album }) {
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-spotify-green/90 to-spotify-green-light/90 flex flex-col items-center justify-center opacity-0 transition-all duration-400 backdrop-blur-sm group-hover:opacity-100">
-          <span className="text-6xl mb-2 animate-pulse">▶</span>
-          <p className="text-base font-bold uppercase tracking-wide text-white">View on TMDB</p>
+          <span className="text-4xl sm:text-6xl mb-2 animate-pulse">▶</span>
+          <p className="text-sm sm:text-base font-bold uppercase tracking-wide text-white">View on TMDB</p>
         </div>
       </div>
       
-      <div className="p-5 bg-gradient-to-b from-white to-gray-50">
-        <h3 className="text-lg font-bold text-gray-900 mb-2 whitespace-nowrap overflow-hidden text-ellipsis transition-colors duration-300 group-hover:text-spotify-green" title={album.name}>
+      <div className="p-4 sm:p-5 bg-gradient-to-b from-white to-gray-50">
+        <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 whitespace-nowrap overflow-hidden text-ellipsis transition-colors duration-300 group-hover:text-spotify-green" title={album.name}>
           {album.name}
         </h3>
-        <p className="text-gray-600 text-base mb-3 whitespace-nowrap overflow-hidden text-ellipsis font-medium" title={artists}>
+        <p className="text-sm sm:text-base text-gray-600 mb-3 whitespace-nowrap overflow-hidden text-ellipsis font-medium" title={artists}>
           {artists}
         </p>
-        <div className="flex justify-between text-sm text-gray-400 gap-2">
-          <span className="px-3 py-2 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full font-semibold transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-spotify-green group-hover:to-spotify-green-light group-hover:text-white group-hover:scale-105">
+        <div className="flex justify-between text-xs sm:text-sm text-gray-400 gap-2">
+          <span className="px-2 sm:px-3 py-1.5 sm:py-2 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full font-semibold transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-spotify-green group-hover:to-spotify-green-light group-hover:text-white group-hover:scale-105">
             {releaseYear}
           </span>
-          <span className="px-3 py-2 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full font-semibold transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-spotify-green group-hover:to-spotify-green-light group-hover:text-white group-hover:scale-105">
-            {album.total_tracks} tracks
+          <span className="px-2 sm:px-3 py-1.5 sm:py-2 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full font-semibold transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-spotify-green group-hover:to-spotify-green-light group-hover:text-white group-hover:scale-105">
+            {album.total_tracks}
           </span>
         </div>
       </div>
