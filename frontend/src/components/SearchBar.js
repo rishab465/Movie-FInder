@@ -3,10 +3,15 @@ import axios from 'axios';
 
 // Allow API base URL to be configured for different environments
 // If no env var is set and we are not on localhost, fall back to the deployed Railway URL
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+// Also normalize to ensure the protocol is present (avoids Vercel proxying a relative URL)
+const rawBaseUrl = process.env.REACT_APP_API_BASE_URL
   || (typeof window !== 'undefined' && window.location.hostname !== 'localhost'
     ? 'https://movie-finder-production.up.railway.app'
     : 'http://localhost:5000');
+
+const API_BASE_URL = rawBaseUrl.startsWith('http')
+  ? rawBaseUrl
+  : `https://${rawBaseUrl.replace(/^\//, '')}`;
 
 function SearchBar({ setAlbums, setLoading, setError }) {
   // State to store search input value
