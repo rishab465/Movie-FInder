@@ -231,5 +231,5 @@ Created as a student project - feel free to reach out!
 
 
 
-**Live on moviefinder-nu-orpin.vercel.app **
+Live on moviefinder-nu-orpin.vercel.app 
 **Enjoy discovering movies! 🎵**
